@@ -1,12 +1,13 @@
-﻿using NewLife.IoT.Protocols;
+﻿using NewLife.IoT.Drivers;
+using NewLife.IoT.Protocols;
 
-namespace NewLife.IoT.Drivers;
+namespace NewLife.Fuji.Drivers;
 
 /// <summary>
-/// ModbusTcp协议封装
+/// FujiPLC协议封装
 /// </summary>
-[Driver("ModbusTcp")]
-public class ModbusTcpDriver : ModbusDriver, IDriver
+[Driver("FujiPLC")]
+public class FujiDriver : ModbusDriver, IDriver
 {
     #region 方法
     /// <summary>

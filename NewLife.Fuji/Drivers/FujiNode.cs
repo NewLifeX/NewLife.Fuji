@@ -1,11 +1,12 @@
-﻿using NewLife.IoT.Protocols;
+﻿using NewLife.IoT.Drivers;
+using NewLife.IoT.Protocols;
 
-namespace NewLife.IoT.Drivers;
+namespace NewLife.Fuji.Drivers;
 
 /// <summary>
 /// Modbus节点
 /// </summary>
-public class ModbusNode : INode
+public class FujiNode : INode
 {
     /// <summary>主机地址</summary>
     public Byte Host { get; set; }

@@ -1,4 +1,5 @@
-﻿using NewLife.IoT.Protocols;
+﻿using NewLife.Fuji.Drivers;
+using NewLife.IoT.Protocols;
 using NewLife.IoT.ThingModels;
 using NewLife.IoT.ThingSpecification;
 using NewLife.Log;
@@ -48,7 +49,7 @@ public abstract class ModbusDriver : DisposeBase
     /// <returns></returns>
     public virtual INode Open(IChannel channel, IDictionary<String, Object> parameters)
     {
-        var node = new ModbusNode
+        var node = new FujiNode
         {
             Host = (Byte)parameters["host"],
             ReadCode = (FunctionCodes)parameters["ReadFunctionCode"],
@@ -103,7 +104,7 @@ public abstract class ModbusDriver : DisposeBase
         // 加锁，避免冲突
         lock (_modbus)
         {
-            var n = node as ModbusNode;
+            var n = node as FujiNode;
             var dic = new Dictionary<String, Object>();
             //foreach (var p in points)
             //{
@@ -243,7 +244,7 @@ public abstract class ModbusDriver : DisposeBase
 
         if (value == null) return null;
 
-        var n = node as ModbusNode;
+        var n = node as FujiNode;
         UInt16[] vs;
         if (value is Byte[] buf)
         {
