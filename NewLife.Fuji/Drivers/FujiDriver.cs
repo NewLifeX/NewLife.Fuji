@@ -9,28 +9,6 @@ namespace NewLife.Fuji.Drivers;
 /// </summary>
 [Driver("FujiPLC")]
 [DisplayName("富士PLC")]
-public class FujiDriver : ModbusDriver, IDriver
+public class FujiDriver : DriverBase<FujiNode, FujiParameter>
 {
-    #region 方法
-    /// <summary>
-    /// 创建Modbus通道
-    /// </summary>
-    /// <param name="channel"></param>
-    /// <param name="parameters"></param>
-    /// <returns></returns>
-    protected override Modbus CreateModbus(IChannel channel, IDictionary<String, Object> parameters)
-    {
-        var address = parameters["Address"] as String;
-        if (address.IsNullOrEmpty()) throw new ArgumentException("参数中未指定地址address");
-
-        var modbus = new ModbusTcp
-        {
-            Server = address,
-            Tracer = Tracer,
-            Log = Log,
-        };
-
-        return modbus;
-    }
-    #endregion
 }
