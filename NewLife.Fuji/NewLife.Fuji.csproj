@@ -43,8 +43,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NewLife.IoT" Version="2.5.2025.602" />
-    <PackageReference Include="NewLife.Modbus" Version="2.0.2025.602" />
+    <PackageReference Include="NewLife.IoT" Version="2.6.2025.701" />
+    <PackageReference Include="NewLife.Modbus" Version="2.0.2025.701" />
   </ItemGroup>
 
   <ItemGroup>
